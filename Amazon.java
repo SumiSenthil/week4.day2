@@ -51,11 +51,9 @@ public class Amazon {
 		 driver.findElement(By.xpath("//input[@id='add-to-cart-button']")).click();
 		 Thread.sleep(500);
 		String MRP = driver.findElement(By.xpath("//b[text()='Cart subtotal']/following::span[1]/span")).getText();
-		 String MRPvalue = MRP.replace("?","");
-		 String MRPvalue1 = MRPvalue.replace(".00","");
-		 System.out.println("Price of Product:"+MRPvalue1);
 		
-		 if (Price.equals(MRPvalue1)) {
+		
+		 if (MRP.contains(Price)) {
 			 System.out.println("Price are same");
 		 }
 		 else
